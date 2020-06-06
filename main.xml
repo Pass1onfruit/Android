@@ -1,53 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout
-     xmlns:android="http://schemas.android.com/apk/res/android"
-     android:orientation="vertical"
-     android:layout_width="fill_parent"
-     android:layout_height="fill_parent">
-     <TextView
-        android:id="@+id/text1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-       android:layout_x="5px"
-        android:layout_y="10px"
-        android:text="@string/hello"
-        android:textSize="20sp"/>
-     <ImageButton
-        android:id="@+id/Stop"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_x="30px"
-        android:layout_y="100px"
-        android:src="@drawable/music_stop"  />
-     <ImageButton
-        android:id="@+id/Start"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_x="90px"
-        android:layout_y="100px"
-        android:src="@drawable/music_play"   />
-     <ImageButton
-        android:id="@+id/Pause"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_x="150px"
-        android:layout_y="100px"
-        android:src="@drawable/music_pause"  />
+<androidx.constraintlayout.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
-    <CheckBox
-        android:id="@+id/check1"
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_x="10px"
-        android:layout_y="180px"
-        android:textSize="20sp"
-        android:text="@string/one" />
-    <CheckBox
-        android:id="@+id/check2"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_x="10px"
-        android:layout_y="210px"
-        android:textSize="20sp"
-        android:text="@string/two" />
-</AbsoluteLayout>
+        android:layout_height="fill_parent"
+        android:layout_marginVertical="30dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="播放" />
+
+            <Button
+                android:id="@+id/pause"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="暂停" />
+
+            <Button
+                android:id="@+id/stop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="停止" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="30dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上一首" />
+            <Button
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="120dp"
+                android:text="下一首" />
+
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="播放时长：" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.ConstraintLayout>

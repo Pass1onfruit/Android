@@ -45,6 +45,7 @@
 
         </LinearLayout>
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -52,17 +53,17 @@
             android:layout_marginVertical="30dp"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/previous"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="上一首" />
-            <Button
                 android:id="@+id/next"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="120dp"
                 android:text="下一首" />
 
+            <Button
+                android:id="@+id/previous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="上一首" />
         </LinearLayout>
 
         <SeekBar
@@ -74,7 +75,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="播放时长：" />
+            android:text="当前进度：" />
 
         <TextView
             android:id="@+id/text1"
